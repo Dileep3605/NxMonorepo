@@ -1,0 +1,32 @@
+.login-component {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 2rem;
+
+  height: 100%;
+  align-items: center;
+
+  .login-card {
+    width: 100%;
+    width: 500px;
+    mat-card-header {
+    color: #ffffff;
+      padding-top: 2rem;
+      justify-content: center;
+    }
+
+    mat-card-content {
+      display: flex;
+      flex-direction: column;
+    }
+    mat-card-actions {
+      padding-bottom: 2rem;
+      padding-left: 16px;
+      padding-right: 16px;
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

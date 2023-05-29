@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="site-toolbar">
+  <!-- <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button> -->
+  <span>NxApp</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-button
+    type="button"
+    class="example-icon favorite-icon"
+    *ngIf="!isUserLoggedIn"
+    aria-label="Example login-button"
+    (click)="loginRoute()"
+  >
+    Login
+  </button>
+  <button
+    mat-button
+    type="button"
+    class="example-icon favorite-icon"
+    *ngIf="!isUserLoggedIn"
+    aria-label="Example signup-button"
+    (click)="signupRoute()"
+  >
+    Signup
+  </button>
+  <button
+    mat-button
+    class="example-icon"
+    type="button"
+    *ngIf="isUserLoggedIn"
+    (click)="logout()"
+    aria-label="Example login-button"
+  >
+    Logout
+  </button>
+</mat-toolbar>

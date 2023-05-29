@@ -1,0 +1,32 @@
+.success-snackbar {
+  color: var(--white-color);
+  --mdc-snackbar-container-color: var(--success-color);
+  .mdc-snackbar__label {
+    color: var(--white-color) !important;
+  }
+  .mat-simple-snackbar-action {
+    color: var(--white-color) !important;
+  }
+}
+
+.failed-snackbar {
+  color: var(--white-color);
+  --mdc-snackbar-container-color: var(--delete-color);
+  .mdc-snackbar__label {
+    color: var(--white-color) !important;
+  }
+  .mat-simple-snackbar-action {
+    color: var(--white-color) !important;
+  }
+}
+
+.warning-snackbar {
+  color: var(--white-color);
+  --mdc-snackbar-container-color: var(--orange-color);
+  .mdc-snackbar__label {
+    color: var(--white-color) !important;
+  }
+  .mat-simple-snackbar-action {
+    color: var(--white-color) !important;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "login": "http://localhost:4201/",
+  "landing-page": "http://localhost:4202",
+  "signup": "http://localhost:4203"
+}

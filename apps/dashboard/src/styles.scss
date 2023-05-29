@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #153d77;
+  --secondary-color: #6c757d;
+  --orange-color: #ff9800;
+  --success-color: #198754;
+  --delete-color: #dc3545;
+  --info-color: #ffffff;
+  --background-color: #f2f2f2;
+  --white-color: #ffffff;
+}
+
+@import '../../../libs/alerts/src/lib/styles/alerts.scss';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
