@@ -20,7 +20,7 @@
           "apps/dashboard/src/assets"
         ],
         "styles": [
-          "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
           "apps/dashboard/src/styles.scss"
         ],
         "scripts": [],
@@ -110,6 +110,17 @@
         "buildTarget": "dashboard:build",
         "port": 4200
       }
+    },
+    
+    "deploy": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "rm -rf production && mkdir production && mkdir production/published && cp -r ./apps/dashboard/* production && cp -r ./apps/login/ ./apps/signup/ ./apps/landing-page/",
+        "cwd": "dist"
+      }
     }
-  }
+  },
+  "implicitDependencies": ["login", "signup", "landing-page", "privacy-policy"],
+  "tags": []
 }

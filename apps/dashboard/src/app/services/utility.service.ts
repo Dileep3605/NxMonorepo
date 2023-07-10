@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 export class UtilityService {
   #storageService = inject(StorageService);
   #router = inject(Router);
+
   getToken() {
     return this.#storageService.getLocalStorage('token');
   }
@@ -15,5 +16,9 @@ export class UtilityService {
   logout() {
     this.#storageService.clearLocalStorage();
     this.#router.navigate(['/']);
+  }
+
+  clearStorage() {
+    this.#storageService.clearLocalStorage();
   }
 }

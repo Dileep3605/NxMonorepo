@@ -11,7 +11,7 @@
     width: 100%;
     width: 500px;
     mat-card-header {
-    color: #ffffff;
+    color: #000000;
       padding-top: 2rem;
       justify-content: center;
     }
@@ -29,4 +29,8 @@
       }
     }
   }
+}
+
+.title-color {
+  color: #556ee6;
 }

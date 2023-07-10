@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="site-toolbar">
+<mat-toolbar color="primary" class="site-toolbar mat-elevation-z6">
   <!-- <button
     mat-icon-button
     class="example-icon"
@@ -27,6 +27,16 @@
     (click)="signupRoute()"
   >
     Signup
+  </button>
+  <button
+    mat-button
+    type="button"
+    class="example-icon favorite-icon"
+    *ngIf="isUserLoggedIn"
+    aria-label="Example signup-button"
+    (click)="aboutUs()"
+  >
+    About Us
   </button>
   <button
     mat-button

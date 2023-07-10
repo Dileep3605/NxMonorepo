@@ -1,0 +1,27 @@
+<div class="card-grid">
+  <mat-card class="example-card" *ngFor="let post of posts">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu {{ post.id }}</mat-card-title>
+      <mat-card-subtitle>{{ post.title }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="https://picsum.photos/400/300?random&category=dogs"
+      alt="Photo of a Shiba Inu"
+      height="200"
+      width="100%"
+      priority
+      
+    />
+    <mat-card-content>
+      <p>
+        {{ post.body }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

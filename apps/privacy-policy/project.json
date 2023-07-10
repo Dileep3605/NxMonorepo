@@ -1,0 +1,122 @@
+{
+  "name": "privacy-policy",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "nx-angular",
+  "sourceRoot": "apps/privacy-policy/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/privacy-policy",
+        "index": "apps/privacy-policy/src/index.html",
+        "main": "apps/privacy-policy/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/privacy-policy/tsconfig.app.json",
+        "assets": [
+          "apps/privacy-policy/src/favicon.ico",
+          "apps/privacy-policy/src/assets"
+        ],
+        "styles": ["apps/privacy-policy/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/privacy-policy/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/privacy-policy/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nx/angular:webpack-dev-server",
+      "options": {
+        "port": 4204,
+        "publicHost": "http://localhost:4204"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "privacy-policy:build:production"
+        },
+        "development": {
+          "browserTarget": "privacy-policy:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "privacy-policy:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "apps/privacy-policy/**/*.ts",
+          "apps/privacy-policy/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/privacy-policy/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "privacy-policy:build",
+        "port": 4204,
+        "watch": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "privacy-policy:build:development"
+        },
+        "production": {
+          "buildTarget": "privacy-policy:build:production"
+        }
+      }
+    }
+  }
+}

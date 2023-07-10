@@ -2,6 +2,13 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'nx-angular-login-entry',
-  template: `<nx-angular-login></nx-angular-login>`,
+  styles: [
+    `
+      .title-color {
+        color: green;
+      }
+    `,
+  ],
+  template: `<router-outlet></router-outlet>`,
 })
 export class RemoteEntryComponent {}

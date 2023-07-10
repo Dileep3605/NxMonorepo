@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HeaderComponent } from './modules/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,8 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     HeaderComponent,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

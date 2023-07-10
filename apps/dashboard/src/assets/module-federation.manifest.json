@@ -1,5 +1,6 @@
 {
   "login": "http://localhost:4201/",
   "landing-page": "http://localhost:4202",
-  "signup": "http://localhost:4203"
+  "signup": "http://localhost:4203",
+  "privacy-policy": "http://localhost:4204"
 }
